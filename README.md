@@ -53,8 +53,9 @@
 
 ----------------------------------------------------
 ## База данных
-(пока такая....)
-![image](https://github.com/user-attachments/assets/05f186ca-4072-4c13-bfdf-85e70c0a158c)
+
+![image](https://github.com/user-attachments/assets/19d3ea61-9ec5-4c83-8407-907f699a5c59)
+
 
 
 
