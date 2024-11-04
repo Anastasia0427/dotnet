@@ -1,6 +1,6 @@
 using Serilog;
 
-namespace Planner.WebAPI.IoC
+namespace Planner.Service.IoC
 {
     public static class SerilogConfigurator
     {

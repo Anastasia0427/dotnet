@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Planner.Repository</RootNamespace>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <Folder Include="Board" />
+        <Folder Include="User" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <ProjectReference  Include="..planner\Planner.DataAccess\Planner.DataAccess.csproj" />
+    </ItemGroup>
+    
+</Project>

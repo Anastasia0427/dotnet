@@ -1,4 +1,4 @@
-namespace Planner.WebAPI.IoC
+namespace Planner.Service.IoC
 {
     public static class SwaggerConfigurator
     {
