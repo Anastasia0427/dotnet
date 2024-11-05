@@ -22,11 +22,11 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
         return context.Set<T>().FirstOrDefault(x => x.Id == id);
     }
 
-    // !
+    
     public T? GetById(Guid id)
     {
         using var context = _contextFactory.CreateDbContext();
-        return context.Set<T>().FirstOrDefault(x => x.Id == id);
+        return context.Set<T>().FirstOrDefault(x => x.ExternalId == id);
     }
 
     public T Save(T entity)
@@ -50,12 +50,6 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
             return result.Entity;
         }
     }
-
-    // ExternalId -- ???????
-    // (скорее всего, где-то в сущностях ошиблась с айдишниками, только где...)
-    
-    // на .FirstOrDefault (стр 29) -- "ambiguous invocation" (чего-то там IEnumerable и IQueryable)
-    // подсвечивает красным .ModificationTime (предлагает исправить на .ModificaTime)
     
     public void Delete(T entity)
     {
