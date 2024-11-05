@@ -53,7 +53,6 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
 
     // ExternalId -- ???????
     // (скорее всего, где-то в сущностях ошиблась с айдишниками, только где...)
-    // IRepository -- ЧТО ЭТО И ОТКУДА (пакеты вроде бы все подключила)
     
     // на .FirstOrDefault (стр 29) -- "ambiguous invocation" (чего-то там IEnumerable и IQueryable)
     // подсвечивает красным .ModificationTime (предлагает исправить на .ModificaTime)
