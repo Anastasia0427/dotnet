@@ -9,5 +9,6 @@ public class UrgencyEntity : BaseEntity
 {
     [Key]
     public string Urgency { get; set; }
+    
     public string UrgencyColor { get; set; }
 }

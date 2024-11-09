@@ -10,15 +10,21 @@ public class TaskEntity : BaseEntity
     [Key]
     public int TaskId { get; set; }
     
+    // не совсем понимаю, правильно ли я связала таблицы вот в этом месте
     public int FKColumnId { get; set; }
     [ForeignKey("FKColumnId")]
     public virtual ColumnEntity ColumnId { get; set; }
     public string TaskTitle { get; set; }
+    
     public string TaskComplexity { get; set; }
+    
     public DateTime? TaskDeadline { get; set; }
+    
     public string? TaskUrgency { get; set; }
     [ForeignKey("TaskUrgency")]
     public virtual UrgencyEntity Urgency { get; set; }
+    
     public string? TaskProgress { get; set; }
+    
     public string? TaskDescription { get; set; }
 }

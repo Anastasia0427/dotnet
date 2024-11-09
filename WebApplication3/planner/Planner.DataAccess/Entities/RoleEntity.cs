@@ -9,5 +9,6 @@ public class RoleEntity : BaseEntity
 {
     [Key]
     public string RoleName { get; set; }
+    
     public string? RoleDescription { get; set; }
 }
