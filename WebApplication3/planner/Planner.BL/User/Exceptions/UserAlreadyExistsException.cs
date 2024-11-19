@@ -1,6 +1,6 @@
 namespace Planner.BL.User.Exceptions;
 
-public class UserAlreadyExistsException
+public class UserAlreadyExistsException : ApplicationException
 {
-    //в разработке...
+    public UserAlreadyExistsException(string message) : base(message) { }
 }

@@ -1,6 +1,6 @@
 namespace Planner.BL.User.Exceptions;
 
-public class UserNotFoundException
+public class UserNotFoundException : ApplicationException
 {
-    //в разработке...
+    public UserNotFoundException(string message) : base(message) { }
 }
