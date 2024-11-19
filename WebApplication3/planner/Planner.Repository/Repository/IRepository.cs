@@ -10,3 +10,5 @@ public interface IRepository<T> where T: BaseEntity
     T Save(T entity);
     void Delete(T entity);
 }
+
+//в разработке...
