@@ -2,7 +2,6 @@ using AutoMapper;
 using Planner.BL.User.Entities;
 using Planner.BL.User.Exceptions;
 using Planner.DataAccess.Entities;
-//и тут себе напоминалку оставлю: подключить Repository.csproj к .sln–файлу!!
 using Planner.Repository.Repository;
 
 namespace Planner.BL.User.Provider;

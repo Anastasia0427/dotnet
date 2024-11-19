@@ -1,13 +1,16 @@
 using AutoMapper;
 using Planner.BL.User.Entities;
-//using Planner.Service.Controllers.User.Entities;
+using Planner.Service.Controllers.User.Entities;
 
 
 namespace Planner.Service.Mapper;
 
-public class UserServiceProfile
+public class UserServiceProfile : Profile
 {
-    CreateMap<RegisterUserRequest, CreateUserModel>();
-    CreateMap<UpdateUserRequest, UpdateUserModel>();
-
+    public UserServiceProfile()
+    {
+        CreateMap<RegisterUserRequest, CreateUserModel>();
+        CreateMap<UpdateUserRequest, UpdateUserModel>();
+        //
+    }
 }

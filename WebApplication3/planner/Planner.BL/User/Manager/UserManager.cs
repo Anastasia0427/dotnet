@@ -3,7 +3,6 @@ using AutoMapper.Internal.Mappers;
 using Planner.BL.User.Entities;
 using Planner.BL.User.Exceptions;
 using Planner.DataAccess.Entities;
-//пересоздать бы этого товарища по-хорошему, да к .sln–файлу подключить.. в следующем коммите сделаю
 using Planner.Repository.Repository;
 
 namespace Planner.BL.User.Manager;
