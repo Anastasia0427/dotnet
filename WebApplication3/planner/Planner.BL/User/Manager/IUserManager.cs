@@ -6,6 +6,6 @@ public interface IUserManager
 {
     UserModel CreateUser(CreateUserModel model);
     void DeleteUser(int UserId);
-    UserModel UpdateUser(UpdateUserModel model);
+    UserModel UpdateUser(int UserId, UpdateUserModel model);
 }
 

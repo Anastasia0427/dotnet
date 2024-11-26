@@ -1,4 +1,8 @@
-using Planner.BL.Auth.Entities;
+// using Planner.BL.Auth.Entities;
+//
+// namespace Planner.BL.Auth;
+
+using Planner.Bl.Auth.Entities;
 
 namespace Planner.BL.Auth;
 

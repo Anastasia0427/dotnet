@@ -8,11 +8,12 @@ using Planner.Service.Settings;
 using Microsoft.EntityFrameworkCore;
 using Planner.BL.User;
 
+
 namespace Planner.Service.IoC;
 
 public static class ServicesConfigurator
 {
-    public static void ConfigureServices(IServiceCollection services)
+    public static void ConfigureServices(IServiceCollection services, PlannerSettings settings)
     {
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         

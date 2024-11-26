@@ -7,6 +7,7 @@
 
     <ItemGroup>
         <ProjectReference Include = "..\Planner.DataAccess\Planner.DataAccess.csproj" />
+        <ProjectReference Include="..\Planner.Repository\Planner.Repository.csproj" />
     </ItemGroup>
 
     <ItemGroup>

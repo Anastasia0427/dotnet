@@ -1,19 +1,27 @@
-using Planner.DataAccess.Entities;
+using System.Linq.Expressions;
+using Planner.DataAccess;
 using Microsoft.EntityFrameworkCore;
 
-namespace Planner.DataAccess;
+namespace Planner.Repository.Repository;
 
 public class Repository<T> : IRepository<T> where T : BaseEntity
 {
-    public Repository(IDbContextFactory<DbContext> contextFactory)
+    private readonly IDbContextFactory<PlannerDbContext> _contextFactory;
+    public Repository(IDbContextFactory<PlannerDbContext> contextFactory)
     {
         _contextFactory = contextFactory;
     }
 
-    public IQueryable<T> GetAll()
+    public IEnumerable<T> GetAll()
     {
         using var context = _contextFactory.CreateDbContext();
-        return context.Set<T>();
+        return context.Set<T>().ToList();
+    }
+
+    public IEnumerable<T> GetAll(Expression<Func<T, bool>> predicate)
+    {
+        using var context = _contextFactory.CreateDbContext();
+        return context.Set<T>().Where(predicate).ToList();
     }
 
     public T? GetById(int id)
@@ -59,8 +67,4 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
         context.SaveChanges();
     }
 
-    private readonly IDbContextFactory<DbContext> _contextFactory;
 }
-
-
-//в разработке...

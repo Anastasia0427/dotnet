@@ -41,7 +41,8 @@ public class UserController : ControllerBase
                 var userModel = _userManager.CreateUser(createUserModel);
                 return Ok(new UserListResponse
                 {
-                    User = [UserModel]
+                    //User = [UserModel]
+                    User = new List<UserModel> { userModel }
                 });
             }
             catch (Exception e)
@@ -50,8 +51,8 @@ public class UserController : ControllerBase
                 return BadRequest(e.Message);
             }
         }
-        _logger.Error(validationResult.toString());
-        return BadRequest(validationResult.toString());
+        _logger.Error(validationResult.ToString());
+        return BadRequest(validationResult.ToString());
     }
 
     //тут будут ещё POST и GET!!

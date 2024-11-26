@@ -41,7 +41,7 @@ public class UserManager : IUserManager
     }
 
     //вот тут немного не уверена насчёт правильности этого всего
-    public UserModel UpdateUser(int UserId)
+    public UserModel UpdateUser(int UserId, UpdateUserModel updateModel)
     {
         var entity = _userRepository.GetById(UserId);
         if (entity is null)

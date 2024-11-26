@@ -17,11 +17,22 @@ public class UserProvider : IUserProvider
         _mapper = mapper;
     }
 
-    public IEnumerable<UserEntity> GetUsers()
+    public IEnumerable<UserModel> GetUsers(FilterUserModel filter = null)
     {
-        //в разработке...
-        //return _mapper.Map<IEnumerable<UserModel>>(users);
-        return _userRepository.GetAll();
+        string? userNamePart = filter?.UserName;
+        string? emailPart = filter?.Email;
+        string? rolePart = filter?.Role;
+        DateTime? creationTime = filter?.CreationTime;
+        DateTime? modificationTime = filter?.ModificationTime;
+        
+        var users = _userRepository.GetAll(u => 
+            (userNamePart == null || u.UserName.Contains(userNamePart)) &&
+            (emailPart == null || u.Email.Contains(emailPart)) &&
+            (rolePart == null || u.Role.Contains(rolePart)) &&
+            (creationTime == null || u.CreationTime == creationTime) &&
+            (modificationTime == null || u.ModificationTime == modificationTime));
+        return _mapper.Map<IEnumerable<UserModel>>(users);
+        
     }
 
     public UserModel GetUserInfo(int UserId)
